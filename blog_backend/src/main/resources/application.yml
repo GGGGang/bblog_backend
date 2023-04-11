@@ -1,0 +1,19 @@
+
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/vueblog2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 8081
+mybatis-plus:
+  mapper-locations: classpath*:com/example/*/mapper/mapping/*.xml
+  type-aliases-package: com.example.blog.demo.po
+  configuration:
+    map-underscore-to-camel-case: false
+    default-statement-timeout: 120
+    call-setters-on-nulls: true
+
