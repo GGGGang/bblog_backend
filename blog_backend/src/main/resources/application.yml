@@ -10,7 +10,7 @@ spring:
 server:
   port: 8081
 mybatis-plus:
-  mapper-locations: classpath*:com/example/*/mapper/mapping/*.xml
+  mapper-locations: classpath:**/mapper/mapping/*.xml
   type-aliases-package: com.example.blog.demo.po
   configuration:
     map-underscore-to-camel-case: false

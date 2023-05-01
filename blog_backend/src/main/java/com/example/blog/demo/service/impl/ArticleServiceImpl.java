@@ -6,7 +6,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 
 import com.example.blog.demo.mapper.ArticleMapper;
-import com.example.blog.demo.po.Article;
+import com.example.blog.demo.vo.ArticleVO;
 import com.example.blog.demo.service.ArticleService;
 import com.example.blog.demo.util.PageUtil;
 import com.github.pagehelper.Page;
@@ -25,16 +25,16 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> getArticlesByPage(Map<String, Object> param) {
+    public List<ArticleVO> getArticlesByPage(Map<String, Object> param) {
         Map<String, Integer> pageParam = PageUtil.initPageNumAndSize(param);
-        Page<Article> articles = PageHelper.startPage(pageParam.get(PageUtil.PAGE_NUM_KEY), pageParam.get(PageUtil.PAGE_SIZE_KEY))
+        Page<ArticleVO> articles = PageHelper.startPage(pageParam.get(PageUtil.PAGE_NUM_KEY), pageParam.get(PageUtil.PAGE_SIZE_KEY))
                 .doSelectPage(() -> getArticles(param));
-        return (List<Article>) articles.getResult();
+        return (List<ArticleVO>) articles.getResult();
     }
 
     @Override
-    public List<Article> getArticles(Map<String, Object> param) {
-        return articleMapper.selectList(null);
+    public List<ArticleVO> getArticles(Map<String, Object> param) {
+        return articleMapper.queryArticleList(param);
     }
 
 }

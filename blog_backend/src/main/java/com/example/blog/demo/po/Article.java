@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @TableName("article")
 public class Article {
-
     private long id;
     private String title;
     private String mdContent;
@@ -29,6 +28,4 @@ public class Article {
     private java.sql.Timestamp editTime;
     private long state;
     private long pageView;
-
-
 }

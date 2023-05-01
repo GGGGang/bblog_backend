@@ -16,7 +16,7 @@ public class MybatiesOlus {
 
     @Test
     public void testSelectList(){
-        List<Article> articles = articleMapper.selectList(null);
-        System.out.println(articles);
+        //List<Article> articles = articleMapper.selectList(null);
+        //System.out.println(articles);
     }
 }

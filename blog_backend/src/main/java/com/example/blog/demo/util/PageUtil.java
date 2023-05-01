@@ -43,12 +43,11 @@ public class PageUtil<T> {
      * @return 初始化后的参数
      */
     public static Map<String, Integer> initPageNumAndSize(Map<String, Object> param) {
-        HashMap<String, Integer> pangNumAndPageSize = new HashMap<String, Integer>();
-        Object pageNum = param.get(PAGE_NUM_KEY);
-        Object pageSize = param.get(PAGE_SIZE_KEY);
-        pangNumAndPageSize.put(PAGE_NUM_KEY, ObjectUtil.isEmpty(pageNum) ? PAGE_NUM : (Integer) pageNum);
-        pangNumAndPageSize.put(PAGE_SIZE_KEY, ObjectUtil.isEmpty(pageSize) ? PAGE_SIZE : (Integer) pageSize);
+        HashMap<String, Integer> pangNumAndPageSize = new HashMap<String, Integer>(4);
+        String pageNum = (String)param.get(PAGE_NUM_KEY);
+        String pageSize = (String)param.get(PAGE_SIZE_KEY);
+        pangNumAndPageSize.put(PAGE_NUM_KEY, StrUtil.isEmpty(pageNum) ? PAGE_NUM :  Integer.valueOf(pageNum));
+        pangNumAndPageSize.put(PAGE_SIZE_KEY, StrUtil.isEmpty(pageSize) ? PAGE_SIZE : Integer.valueOf(pageSize));
         return pangNumAndPageSize;
     }
-
 }
