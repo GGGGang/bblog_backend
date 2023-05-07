@@ -8,7 +8,7 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 server:
-  port: 8081
+  port: 8082
 mybatis-plus:
   mapper-locations: classpath:**/mapper/mapping/*.xml
   type-aliases-package: com.example.blog.demo.po

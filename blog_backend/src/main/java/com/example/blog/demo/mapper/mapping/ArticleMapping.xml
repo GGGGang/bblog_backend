@@ -11,5 +11,8 @@
       ,a.publishDate
     FROM article a
     LEFT JOIN `user` u ON a.uid = u.id
+    <if test='isNew != null'>
+      ORDER BY a.publishDate DESC
+    </if>
   </select>
 </mapper>
